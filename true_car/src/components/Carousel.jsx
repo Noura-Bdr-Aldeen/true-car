@@ -17,12 +17,10 @@ const FastCompactCarousel = () => {
   ];
 
   return (
-    <div className="container mb-4 px-0" style={{ width: '750px' }}>
+    <div className="container mb-4 px-0" style={{ width: '800px' }}>
       <Carousel
-        indicators={false}
         fade
-        interval={1000}
-        controls={false}
+        interval={2000}
       >
         {carImages.map((image, index) => (
           <Carousel.Item key={index}>

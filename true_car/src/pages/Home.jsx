@@ -1,12 +1,17 @@
 import React from 'react'
-import Hero from '../components/Hero'
+import CarouselSection from '../components/CarouselSection'
+import HeroSection from '../components/HeroSection'
+import MostWantedCar from "../components/card-wanted-car/MostWantedCar"
+import WhyTrueCar from '../components/WhyTrueCar'
 
 const Home = () => {
   return (
     <div>
-      <Hero />
+      <HeroSection/>
+      <CarouselSection />
+      <MostWantedCar/>
+      <WhyTrueCar/>
     </div>
   )
 }
-
 export default Home

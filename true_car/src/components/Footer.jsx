@@ -1,12 +1,5 @@
 import { Container, Row, Col } from 'react-bootstrap';
-import {
-  Facebook,
-  Twitter,
-  Google,
-  Instagram,
-  Linkedin,
-  Github
-} from 'react-bootstrap-icons';
+import { FaFacebook, FaTwitter, FaGoogle, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -23,19 +16,19 @@ const Footer = () => {
           </Col>
           <Col md={6} className="text-center text-md-end">
             <a href="#" className="me-4 text-reset">
-              <Facebook className="fs-5" />
+              <FaFacebook className="fs-5" />
             </a>
             <a href="#" className="me-4 text-reset">
-              <Twitter className="fs-5" />
+              <FaTwitter className="fs-5" />
             </a>
             <a href="#" className="me-4 text-reset">
-              <Google className="fs-5" />
+              <FaGoogle className="fs-5" />
             </a>
             <a href="#" className="me-4 text-reset">
-              <Instagram className="fs-5" />
+              <FaInstagram className="fs-5" />
             </a>
             <a href="#" className="me-4 text-reset">
-              <Linkedin className="fs-5" />
+              <FaLinkedin className="fs-5" />
             </a>
           </Col>
         </Row>
