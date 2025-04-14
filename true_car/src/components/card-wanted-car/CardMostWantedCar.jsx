@@ -5,8 +5,8 @@ import { Link } from "react-router-dom"
 const CardMostWantedCar = ({ car }) => {
     return (
         <Container className="py-4">
-            <div class="card-car">
-                <div class="card-car-details">
+            <div className="card-car">
+                <div className="card-car-details">
                     <Link to={`/car-details/${car.id}`}>
                         <div style={{
                             backgroundImage: `url(${car.image})`,
@@ -17,11 +17,11 @@ const CardMostWantedCar = ({ car }) => {
                             marginBottom: "10px"
                         }}></div>
                     </Link>
-                    <p class="text-title">{car.make}</p>
-                    <p class="text-body">{car.model}</p>
-                    <p class="text-body">{car.engine}</p>
+                    <p className="text-title">{car.make}</p>
+                    <p className="text-body">{car.model}</p>
+                    <p className="text-body">{car.engine}</p>
                 </div>
-                <Link to={`/car-details/${car.id}`}><button class="card-car-button">More info</button></Link>
+                <Link to={`/car-details/${car.id}`}><button className="card-car-button">More info</button></Link>
             </div>
         </Container>
     )
