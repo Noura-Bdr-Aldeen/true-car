@@ -5,6 +5,7 @@ import MostWantedCar from "../components/card-wanted-car/MostWantedCar"
 import WhyTrueCar from '../components/WhyTrueCar'
 import EvaluationForm from '../components/EvaluationForm'
 import Advertisement from '../components/Advertisement'
+import BrandSection from "../components/BrandSection"
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <HeroSection />
       <CarouselSection />
       <MostWantedCar />
+      <BrandSection/>
       <Advertisement />
       <WhyTrueCar />
       <EvaluationForm />
