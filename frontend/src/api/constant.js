@@ -1,0 +1,1 @@
+export const urlImage = "https://static.tcimg.net/vehicles"

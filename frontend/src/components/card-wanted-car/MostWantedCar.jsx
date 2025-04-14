@@ -7,7 +7,7 @@ const MostWantedCar = () => {
     const mostWantedCars = apiCars.slice(0, 6);
 
     return (
-        <Container className='py-5'>
+        <Container>
             <Row>
                 <div className='d-grid justify-content-center'>
                     <h2 className='pt-5 text-center text-success'>Most wanted

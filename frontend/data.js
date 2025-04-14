@@ -22,6 +22,44 @@ export const brands = [
   { name: 'Subaru', logo: `${urlImage}/logo/689x384_full_color/43b494c614cd8ca3/Subaru.png` },
 ];
 
+export const advertisement = [
+  {
+    "id": 1,
+    "make": "Toyota",
+    "model": "Camry",
+    "year": 2023,
+    "price": 28990,
+    "mileage": 1500,
+    "image": `${toyota}`,
+    "features": ["Leather Seats", "Sunroof", "Bluetooth"],
+    "promo": "Limited time offer!",
+    "rating": 4.5
+  },
+  {
+    "id": 2,
+    "make": "Honda",
+    "model": "Accord",
+    "year": 2022,
+    "price": 26990,
+    "mileage": 3200,
+    "image": `${honda}`,
+    "features": ["Apple CarPlay", "Lane Assist", "Backup Camera"],
+    "promo": "0% APR financing available",
+    "rating": 4.7
+  },
+  {
+    "id": 3,
+    "make": "Ford",
+    "model": "Mustang",
+    "year": 2023,
+    "price": 42990,
+    "mileage": 500,
+    "image": `${ford}`,
+    "features": ["V8 Engine", "Premium Sound", "Sport Mode"],
+    "promo": "Free maintenance for 1 year",
+    "rating": 4.9
+  }
+]
 export const reviews = [
   {
     id: 1,

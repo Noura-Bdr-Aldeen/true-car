@@ -7,7 +7,7 @@ import MinutesNotHours from "../assets/images/minutes-not-hours.svg"
 
 const WhyTrueCar = () => {
     return (
-        <div className="mt-4 py-5 text-center bg-black text-white">
+        <div className="text-center bg-black text-white">
             <Container>
                 <h2 className="h2 pt-3 pb-5 text-light">Why TrueCar?</h2>
                 <Row>
