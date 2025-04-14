@@ -6,7 +6,7 @@ import bmw from '../../src/assets/images/bmw.avif';
 import ford from '../../src/assets/images/ford.jpg';
 import honda from '../../src/assets/images/honda.jpg';
 
-const FastCompactCarousel = () => {
+const CarouselSection = () => {
   const carImages = [
     { src: toyota, alt: "Toyota" },
     { src: nissan, alt: "Nissan" },
@@ -17,8 +17,9 @@ const FastCompactCarousel = () => {
   ];
 
   return (
-    <Container fluid className="d-flex justify-content-center py-5">
-      <div className="container mb-4 px-0" style={{ width: '800px' }}>
+    <div className='bg-black'>
+      <Container className="py-4" style={{ width: '800px' }}>
+        <h2 className='text-center text-success p-4'>Shop your favorite brand</h2>
         <Carousel
           fade
           interval={2000}
@@ -47,9 +48,9 @@ const FastCompactCarousel = () => {
             </Carousel.Item>
           ))}
         </Carousel>
+      </Container>
       </div>
-    </Container>
   );
 };
 
-export default FastCompactCarousel;
+export default CarouselSection;
