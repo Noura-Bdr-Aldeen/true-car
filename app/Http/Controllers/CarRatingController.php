@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Car;
+
 use App\Http\Requests\StoreCarRatingRequest;
+use App\Models\Car;
 use App\Models\Rate;
 
 class CarRatingController extends Controller
@@ -22,10 +23,11 @@ class CarRatingController extends Controller
             'rating' => $rating,
         ], 201);
     }
+
     public function getTopRated()
     {
         $cars = Car::has('ratings')
-        ->get()
+            ->get()
             ->sortByDesc(function ($car) {
                 return [$car->averageRating(), $car->totalRatings()];
             })
@@ -33,7 +35,7 @@ class CarRatingController extends Controller
             ->values()
             ->map(function ($car) {
                 return [
-                    'car'=>$car,
+                    'car' => $car,
                     'average_rating' => round($car->averageRating(), 1),
                 ];
             });

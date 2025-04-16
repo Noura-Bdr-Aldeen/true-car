@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCarRequest;
-use App\Http\Requests\UpdateCarRequest;
 use App\Models\Car;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -33,9 +31,15 @@ class CarController extends Controller
         return response()->json($car, 201);
     }
 
-    public function show(Car $car)
+    protected function uploadImages(array $images)
+
     {
-        return response()->json($car->load('user:id,name,phone'));
+        $uploadedImages = [];
+        foreach ($images as $image) {
+            $path = $image->store('public/car_images');
+            $uploadedImages[] = Storage::url($path);
+        }
+        return $uploadedImages;
     }
 
 //    public function update(UpdateCarRequest $request, Car $car)
@@ -65,15 +69,9 @@ class CarController extends Controller
 //        return response()->json(null, 204);
 //    }
 
-    protected function uploadImages(array $images)
-
+    public function show(Car $car)
     {
-        $uploadedImages = [];
-        foreach ($images as $image) {
-            $path = $image->store('public/car_images');
-            $uploadedImages[] = Storage::url($path);
-        }
-        return $uploadedImages;
+        return response()->json($car->load('user:id,name,phone'));
     }
 
 //    protected function deleteImages(?array $images)
@@ -85,6 +83,7 @@ class CarController extends Controller
 //            Storage::delete($path);
 //        }
 //    }
+
     public function markAsSold(Car $car)
     {
         if (auth()->id() !== $car->user_id) {
@@ -110,18 +109,18 @@ class CarController extends Controller
                 'car' => $car->fresh()->load('user:id,name,phone'),
             ]
         ]);
-}
+    }
+
     public function search(Request $request)
     {
+
         $query = Car::query()->with('user:id,name,phone')->notSold();
 
         $this->applyFilters($query, $request);
 
         $this->applySorting($query, $request);
 
-        $cars = $query->get()
-//        paginate($request->get('per_page', 15))
-        ;
+        $cars = $query->get();
 
         return response()->json([
             'success' => true,
@@ -131,12 +130,12 @@ class CarController extends Controller
     }
 
 
-    protected function applyFilters($query, $request): void
+    protected function applyFilters($query, $request)
     {
 
         if ($request->has('search')) {
             $searchTerm = $request->get('search');
-            $query->where(function($q) use ($searchTerm) {
+            $query->where(function ($q) use ($searchTerm) {
                 $q->where('brand', 'like', "%$searchTerm%")
                     ->orWhere('model', 'like', "%$searchTerm%")
                     ->orWhere('description', 'like', "%$searchTerm%");
@@ -186,11 +185,12 @@ class CarController extends Controller
         $validDirections = ['asc', 'desc'];
 
         if (in_array($sortField, $validSortFields)) {
-        $direction = in_array($sortDirection, $validDirections) ? $sortDirection : 'desc';
-        $query->orderBy($sortField, $direction);
+            $direction = in_array($sortDirection, $validDirections) ? $sortDirection : 'desc';
+            $query->orderBy($sortField, $direction);
+        }
     }
-    }
-    public function getRatingStats( $carId)
+
+    public function getRatingStats($carId)
     {
         $car = Car::findOrFail($carId);
 
@@ -200,7 +200,7 @@ class CarController extends Controller
                 'average_rating' => $car->averageRating(),
                 'total_ratings' => $car->totalRatings(),
                 'rating_distribution' => $car->getRatingDistribution(),
-                'comment'=>$car->getComments(),
+                'comment' => $car->getComments(),
             ]
         ]);
     }

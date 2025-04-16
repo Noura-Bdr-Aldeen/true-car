@@ -6,23 +6,19 @@ use App\Http\Requests\StoreComplaintRequest;
 use App\Http\Requests\UpdateComplaintRequest;
 use App\Models\Car;
 use App\Models\Complaint;
-use Illuminate\Http\JsonResponse;
 
 class ComplaintController extends Controller
 {
 
-
-    // إنشاء شكوى جديدة
-    public function store(StoreComplaintRequest $request): JsonResponse
+    public function store(StoreComplaintRequest $request)
     {
         $complaint = Complaint::create([
-            'name'=>  $request->name,
+            'name' => $request->name,
             'car_id' => $request->car_id,
             'type' => $request->car_id ? 'car_specific' : 'general',
             'title' => $request->title,
             'description' => $request->description,
-        ])
-        ;
+        ]);
 
         return response()->json([
             'message' => 'تم تقديم الشكوى بنجاح',
@@ -30,18 +26,17 @@ class ComplaintController extends Controller
         ], 201);
     }
 
-    // عرض الشكاوى الخاصة بالسيارة (للمالك)
-    public function carComplaints(Car $car): JsonResponse
+    public function carComplaints(Car $car)
     {
 
         $complaints = $car->complaints()
             ->latest()
-            ->get() ;
+            ->get();
 
         return response()->json($complaints);
     }
 
-    public function generalComplaints(): JsonResponse
+    public function generalComplaints()
     {
         $complaints = Complaint::general()
             ->latest()
@@ -50,7 +45,7 @@ class ComplaintController extends Controller
         return response()->json($complaints);
     }
 
-    public function updateStatus(Complaint $complaint, UpdateComplaintRequest $request): JsonResponse
+    public function updateStatus(Complaint $complaint, UpdateComplaintRequest $request)
     {
 
         $complaint->update([
