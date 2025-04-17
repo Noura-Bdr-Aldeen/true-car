@@ -7,6 +7,8 @@ import CarDetails from "../src/pages/carDetails/CarDetails"
 import AdvertisementDetails from "../src/pages/AdvertisementDetails"
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
+import LoginPage from './pages/LoginPage';
+import SignUpPage from './pages/SignUpPage';
 
 function App() {
 
@@ -19,6 +21,8 @@ function App() {
         <Route path="/car-details/:id" element={<CarDetails />} />
         <Route path="/cars/:id" element={<AdvertisementDetails />} />
         <Route path="/cars" element={<Cars />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/sign-up" element={<SignUpPage />} />
       </Routes>
       <Footer />
     </>
