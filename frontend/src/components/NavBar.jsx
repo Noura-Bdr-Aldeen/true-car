@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import logo from "../assets/images/logo.avif"
+import Search from './Search'
+import { IoPersonCircle } from "react-icons/io5";
 
 
 const NavBar = () => {
@@ -29,19 +31,14 @@ const NavBar = () => {
                             <li className="nav-item px-2">
                             </li>
                         </ul>
-                        <Link to="/login" className='text-decoration-none text-info fw-bold '
-                            style={{
-                                border: "solid 2px",
-                                padding: "5px 15px",
-                                borderRadius: "20px"
-                            }}>
-                            login
+                        <Search />
+                        <Link to="/login" className='text-decoration-none' color='info'>
+                            <IoPersonCircle size={40} />
                         </Link>
-
                     </div>
                 </div>
-            </nav>
-        </div>
+            </nav >
+        </div >
     )
 }
 
