@@ -1,52 +1,5 @@
 {
   "evaluations": [
-    {
-      "name": "Noura Bdr Aldeen",
-      "email": "nourabdraldeen55@gmail.com",
-      "rating": 5,
-      "message": "good",
-      "type": "evaluation",
-      "id": 1
-    },
-    {
-      "name": "Noura Bdr Aldeen",
-      "email": "nourabdraldeen55@gmail.com",
-      "rating": 5,
-      "message": "bad",
-      "type": "complaint",
-      "id": 2
-    },
-    {
-      "name": "Noura Bdr Aldeen",
-      "email": "nourabdraldeen55@gmail.com",
-      "rating": 3,
-      "message": "good",
-      "type": "evaluation",
-      "id": 3
-    },
-    {
-      "name": "Noura Bdr Aldeen",
-      "email": "nourabdraldeen55@gmail.com",
-      "rating": 5,
-      "message": "bad",
-      "type": "complaint",
-      "id": 4
-    },
-    {
-      "name": "Noura Bdr Aldeen",
-      "email": "nourabdraldeen55@gmail.com",
-      "rating": 5,
-      "message": "good website",
-      "type": "evaluation",
-      "id": 5
-    },
-    {
-      "name": "Noura Bdr Aldeen",
-      "email": "nourabdraldeen55@gmail.com",
-      "rating": 5,
-      "message": "hi",
-      "type": "evaluation",
-      "id": 6
-    }
+ 
   ]
 }
