@@ -98,7 +98,7 @@ const Login = () => {
                     {errors.password && <span className="error">{errors.password[0]}</span>}
                 </span>
                 {errors.general && <div className="error-message">{errors.general}</div>}
-                <span className="span"><Link to="/forgot-password">Forgot password?</Link></span>
+                <span className="span">Forgot password?</span>
                 <button
                     className="submit"
                     type="submit"

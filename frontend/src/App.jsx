@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignUpPage';
+import Vendor from './pages/Vendor';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/cars" element={<Cars />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/sign-up" element={<SignUpPage />} />
+        <Route path="/vendor" element={<Vendor />} />
       </Routes>
       <Footer />
     </>

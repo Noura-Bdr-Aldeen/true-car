@@ -51,7 +51,7 @@ const SignUp = () => {
             }
 
             // Registration successful
-            navigate('/login'); // Redirect to login page
+            navigate('/login');
         } catch (error) {
             console.error('Registration error:', error);
             setErrors({ general: error.message });

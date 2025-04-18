@@ -15,7 +15,7 @@ const NavBar = () => {
 
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li className="nav-item px-2">
+                            <li className="nav-item nav-item-style px-2">
                                 <Link to="/cars" className="nav-link text-light text-decoration-none">
                                     All Cars
                                 </Link>
@@ -26,7 +26,17 @@ const NavBar = () => {
                                     style={{ color: "#D325A6" }}
                                     aria-disabled="true">Sill your car</a>
                             </li>
+                            <li className="nav-item px-2">
+                            </li>
                         </ul>
+                        <Link to="/login" className='text-decoration-none text-info fw-bold '
+                            style={{
+                                border: "solid 2px",
+                                padding: "5px 15px",
+                                borderRadius: "20px"
+                            }}>
+                            login
+                        </Link>
 
                     </div>
                 </div>
